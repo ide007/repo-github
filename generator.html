@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Юсупов Идель</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+				
+	function gen_password(len){
+		var len = readInt ();
+    	var password = "";
+   		var symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    	for (var i = 0; i < len; i++){
+        password += symbols.charAt(Math.floor(Math.random() * symbols.length));     
+    	}
+    	write ("Ваш новый пароль  " + password);
+		}
+
+	function readInt() {
+		var len = document.getElementById("length").value;
+		return parseInt(len);
+		} 
+	
+	function write(text){
+		document.getElementById("info").innerHTML = text;
+		}
+
+	</script>	
+</head>
+<meta charset="utf-8">
+<body>
+<div class="content">
+	<div class="header">
+	<a href="index.html">Главная</a>
+	<a href="riddles.html">Загадки</a>
+	<a href="guess.html">Угадай число</a>
+	<a href="generator.html">Генератор случайных паролей</a>
+</div>
+<div class = "contentWrap">
+	<div class="content">
+		<div class="center"></div>
+
+		<h1>Генератор случайного пароля</h1>
+		<div class="box">
+			<p id="info">Какой длины пароль хотите создать?</p>
+			<input type = "text" id = "length" >
+			<br>
+			<a href="#" onclick="gen_password();" id = "button">Сгенерировать</a>
+		</div>
+		</div>
+	</div>
+</div>
+</p> 
+<div class="footer">
+Copyright &copy; IdelYusupov
+</div>
+</body>
+</html>
